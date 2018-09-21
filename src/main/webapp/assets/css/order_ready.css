@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.container {
+	padding-top: 50px;
+}
+
+.inner {
+	background-color: white;
+	margin: 15px 0px;
+}

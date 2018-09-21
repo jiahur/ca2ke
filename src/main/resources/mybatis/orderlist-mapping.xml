@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.orderlistMapper">
+
+	<!-- 오더리스트 등록  (sql문 2개 필요)-->
+	<insert id="addOrderlist1" parameterType="orderlistInDTO">
+		INSERT INTO orderlist (o_num, o_date, cart_num, m_id, payment, o_status)
+		VALUES (seq_onum.nextval, sysdate, #{cart_num},#{m_id},#{payment},#{o_status})
+	</insert>	
+	
+	<update id="addOrderlist2" parameterType="cartInDTO">
+		UPDATE orderlist	SET
+		(p_request_date, p_request_time,p_store,item_qty,item_num,item_tot) 
+		= (select p_request_date, p_request_time, p_store, item_qty, item_num, item_tot 
+		from cart where cart_num=#{cart_num}) where cart_num=#{cart_num}
+	</update>
+	
+	
+	
+	<!-- 준비현황 업데이트  -->
+	<update id="updateStatus" parameterType="java.util.Map">
+		UPDATE orderlist SET o_status=#{o_status} where o_num=#{o_num}
+	</update>
+	
+	<!-- 주문 취소시 아이템 수량 / 총액 0으로 변경 -->
+	<update id="cancelOrder">
+		UPDATE orderlist set item_qty=0, item_tot=0 where o_status=0
+	</update>
+	
+	<!-- 픽업 시간 업데이트 -->
+	<update id="pickup" parameterType="int">
+		UPDATE orderlist set p_actual_time=sysdate where o_num=#{o_num}
+	</update>
+	
+	
+	
+	
+	<!-- 오더리스트 전체 목록 가져오기 -->
+	<select id="listOrderlist" resultType="orderlistListDTO">
+		SELECT * from orderlist NATURAL JOIN item NATURAL JOIN member NATURAL JOIN status 
+		order by o_date desc
+	</select>
+	
+	
+	<!-- 오더리스트 목록 가져오기 - 장바구니# 기준 -->
+	<select id="orderlist_cart" parameterType="int" resultType="orderlistListDTO">
+		SELECT * from orderlist NATURAL JOIN item NATURAL JOIN member NATURAL JOIN status 
+		where cart_num=#{cart_num}
+	</select>
+	
+	
+	<!-- 오더리스트 목록 가져오기 - 특정 아이디 기준-->
+	<select id="orderlist_id" parameterType="java.lang.String" resultType="orderlistListDTO">
+		SELECT * from orderlist NATURAL JOIN item NATURAL JOIN member NATURAL JOIN status 
+		where m_id=#{m_id} order by o_date desc
+	</select>
+	
+	
+	<!-- 오더리스트 목록 가져오기 - 특정 기간 기준-->
+	<select id="orderlist_date" parameterType="java.util.Map" resultType="orderlistListDTO">
+		<![CDATA[
+		SELECT * from orderlist NATURAL JOIN item NATURAL JOIN member NATURAL JOIN status
+		where o_date>#{startDate} and o_date<#{endDate} order by o_date desc
+		]]>
+	</select>
+	
+	
+	<!-- 오더리스트 목록 가져오기 - 특정 카테고리 기준-->
+	<select id="orderlist_category" parameterType="int" resultType="orderlistListDTO">
+		SELECT * from orderlist NATURAL JOIN item NATURAL JOIN member NATURAL JOIN status 
+		where i_category=#{i_category} order by o_date desc
+	</select>
+	
+	
+	<!-- 오더리스트 목록 가져오기 - 특정 아이템 기준-->
+	<select id="orderlist_item" parameterType="int" resultType="orderlistListDTO">
+		SELECT * from orderlist NATURAL JOIN item NATURAL JOIN member NATURAL JOIN status 
+		where item_num=#{item_num} order by o_date desc
+	</select>
+
+</mapper>
