@@ -122,12 +122,13 @@
                 	   item_tot:'33000'
                 	   
                    },
-                   dataType : 'json',
-                   error: function(xhr, status, error){
-                       alert(error);
-                   },
+
                    success : function(json){
-                       alert(json.num)
+                	   alert("123");
+                       alert(json.item_num)
+                   },
+                   error: function(xhr, status, error){
+                	   alert(error);
                    }
                });
         	
@@ -142,13 +143,6 @@
         	
         	
         });
-        
-        
-        
-        
-        
-        
-        
         
         
         

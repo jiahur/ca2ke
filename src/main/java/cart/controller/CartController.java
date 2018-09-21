@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import cart.bean.CartInDTO;
@@ -32,7 +34,7 @@ public class CartController {
 	
 	/**장바구니에 물품 추가*/
 	@RequestMapping(value="/main/cartAdd")
-	public String cartAdd(HttpServletRequest request, ModelAndView modelAndView, CartInDTO cartDTO) {
+	public @ResponseBody CartInDTO cartAdd(HttpServletRequest request, HttpServletResponse response, ModelAndView modelAndView, CartInDTO cartDTO) {
 		System.out.println("[장바구니 물품추가]");
 		
 		int i_category = 1;
@@ -56,10 +58,13 @@ public class CartController {
 			
 		}
 		
+		int num = 100;
+		
 /*		modelAndView.addObject("result",result);
 		modelAndView.addObject("display", "../item/itemList?category="+i_category);
 		modelAndView.setViewName("../main/main.jsp");*/
-		return "{num : 100}";
+		
+		return cartDTO;
 	}
 	
 	
