@@ -1,0 +1,122 @@
+@charset "UTF-8";
+th.header {
+background:#F4F9FF;
+color:#444444;
+vertical-align:middle;
+border-bottom:1px solid #E6E6E6;
+font-size:1em;
+height:2em;
+}
+
+/* remove outer padding */
+.row{
+padding: 0px;
+margin: 0px;
+}
+
+/*Remove rounded coners*/
+.sidebar .navbar-collapse {
+border-radius: 0px;
+}
+
+.sidebar {
+transition: margin 200ms ease-out;
+-webkit-transition: margin 200ms ease-out;
+-moz-transition: margin 200ms ease-out;
+-o-transition: margin 200ms ease-out;
+}
+
+/* 사이드바 아이콘 */
+.sidebar a{
+padding-right: 13px;
+}
+
+/* 사이드바 상단 첫줄 밑줄 추가 */
+.sidebar .navbar-nav > li:first-child{
+border-top: 1px #e5e5e5 solid;
+}
+
+/* 사이드바 밑줄 추가 */
+.sidebar .navbar-nav > li{
+border-bottom: 1px #e5e5e5 solid;
+}
+
+/* 사이드바 100% 너비 사용 */
+.sidebar .navbar-collapse {
+padding: 0 0px 0 0px;
+}
+
+/* 사이드바 100% 너비 */
+.sidebar li {
+width: 100%;
+}
+
+/* Colors/style dropdown box*/
+.sidebar .navbar-nav .open .dropdown-menu {
+position: static;
+float: none;
+width: auto;
+margin-top: 0;
+color: #e5e5e5;
+background-color: transparent;
+border: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+
+
+/*colors dropdown box text */
+.sidebar .navbar-nav open .dropdown-menu>li>a {
+color: #777;
+}
+
+@media only screen and (max-width: 768px) {
+
+#user-profile{
+diplay:none;
+}
+
+}
+
+.profile-userpic:after{
+content:'';
+display:block;
+clear: both;
+}
+
+.profile-userpic{
+float:left;
+width:50%;
+margin-bottom: 5px;
+}
+
+.profile-userpic img {
+/*float: none;*/
+margin: 0 auto;
+width: 65px;
+height:65px;
+-webkit-border-radius: 50% !important;
+-moz-border-radius: 50% !important;
+border-radius: 50% !important;
+}
+
+.profile-usertitle {
+float: left;
+width: 50%;
+text-align: center;
+margin-top: 10px;
+}
+
+.profile-usertitle-name {
+color: black;
+font-size: 14px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+
+.profile-usertitle-job {
+color: black;
+font-size: 14px;
+font-weight: 600;
+margin-bottom: 0px;
+}

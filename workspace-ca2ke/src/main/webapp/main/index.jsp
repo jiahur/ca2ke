@@ -15,12 +15,12 @@
 				<c:if test="${sessionScope.admin != null}">
 					<a href="../admin/admin_main.jsp">관리자페이지바로가기</a>
 				</c:if>	
-				<c:if test="${sessionScope.m_id == null}">
+				<c:if test="${sessionScope.memId == null}">
 					<li><a href="loginForm"><span>LOGIN</span></a></li>
 					<li> | </li>
 					<li><a href="joinForm"><span>JOIN</span></a></li>
 				</c:if>
-				<c:if test="${sessionScope.m_id != null}">
+				<c:if test="${sessionScope.memId != null}">
 					<li><a href="logOut"><span>LOOUT</span></a></li>
 					<li> | </li>
 					<li><a href="cart"><span>CART</span></a></li>

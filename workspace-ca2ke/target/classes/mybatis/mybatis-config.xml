@@ -20,5 +20,6 @@
 		<mapper resource="mybatis/orderlist-mapping.xml"/>
 		<mapper resource="mybatis/item_mapper.xml" />
 		<mapper resource="mybatis/category-mapping.xml"/>
+		<mapper resource="mybatis/admin-mapping.xml"/>
 	</mappers>
 </configuration>
