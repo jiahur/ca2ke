@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.content {
+	background-color: #fff;
+	text-align: center;
+}
+
+.inner {
+	background-color: white;
+}
+
+table {
+	border-top: 2px solid black;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td {
+	padding: 20px;
+}
+
+.td1 {
+	background-color: #eee;
+	width: 200px;
+}
+
+.td2 {
+	background-color: #fff;
+	width: 400px;
+	border-bottom: 1px solid #bbb;
+}
+
+
