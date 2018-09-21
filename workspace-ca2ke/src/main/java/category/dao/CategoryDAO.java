@@ -23,6 +23,6 @@ public class CategoryDAO {
 	
 	public List<CategoryDTO> getAllCategory() {
 		System.out.println("hello");
-		return session.selectList("mybatis.categoryMapper.getAll");
+		return session.selectList("mybatis.categoryMapper.getCategory");
 	}
 }

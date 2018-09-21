@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,7 +41,24 @@ public class CategoryController {
 		dto.setCategory_image(fname);
 		dao.insert(dto);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("main/index.jsp");
+		modelAndView.setViewName("category_view");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/updateCategory")
+	public ModelAndView updateCategory(CategoryDTO dto) {
+		dao.update(dto);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("category_view");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/category_view")
+	public ModelAndView category_view() {
+		List<CategoryDTO> list = dao.getAllCategory();
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("list", list);
+		modelAndView.setViewName("category/category_view.jsp");
 		return modelAndView;
 	}
 }
