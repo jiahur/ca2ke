@@ -14,8 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cart.bean.CartInDTO;
 import cart.bean.CartListDTO;
-import controller.MemberService;
-import dto.MemberDTO;
+import member.bean.MemberDTO;
+import member.controller.MemberService;
 import order.bean.OrderlistInDTO;
 import order.bean.OrderlistListDTO;
 import order.controller.OrderlistServcie;
@@ -76,7 +76,7 @@ public class CartController {
 		cartList = cartService.listCart(m_id);
 		
 		//회원정보 추출
-		MemberDTO memberDTO = memberService.getMember(m_id);
+		MemberDTO memberDTO = memberService.modifyView(m_id);
 		
 		modelAndView.addObject("memberDTO", memberDTO);
 		modelAndView.addObject("cartList", cartList);

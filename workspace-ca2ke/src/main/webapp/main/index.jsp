@@ -12,20 +12,20 @@
     <div id="header">
     	<div class="member">
 			<ul>
-				<c:if test="${pageScope.admin != null}">
-					<a href="">관리자페이지바로가기</a>
+				<c:if test="${sessionScope.admin != null}">
+					<a href="../admin/admin_main.jsp">관리자페이지바로가기</a>
 				</c:if>	
 				<c:if test="${sessionScope.m_id == null}">
-					<li><a href=""><span>LOGIN</span></a></li>
+					<li><a href="loginForm"><span>LOGIN</span></a></li>
 					<li> | </li>
-					<li><a href=""><span>JOIN</span></a></li>
+					<li><a href="joinForm"><span>JOIN</span></a></li>
 				</c:if>
 				<c:if test="${sessionScope.m_id != null}">
-					<li><a href=""><span>LOOUT</span></a></li>
+					<li><a href="logOut"><span>LOOUT</span></a></li>
 					<li> | </li>
 					<li><a href="cart"><span>CART</span></a></li>
 					<li> | </li>
-					<li><a href=""><span>MyPage</span></a></li>
+					<li><a href="myPage"><span>MyPage</span></a></li>
 				</c:if>
 			</ul>
 		</div>

@@ -8,9 +8,10 @@
 		<typeAlias type="cart.bean.CartListDTO" alias="cartListDTO"/>
 		<typeAlias type="order.bean.OrderlistInDTO" alias="orderlistInDTO"/>
 		<typeAlias type="order.bean.OrderlistListDTO" alias="orderlistListDTO"/>
-		<typeAlias type="dto.MemberDTO" alias="memberDTO"/>
 		<typeAlias type="item.bean.ItemDTO" alias="itemDTO"/>
 		<typeAlias type="category.bean.CategoryDTO" alias="category"/>
+		<typeAlias type="member.bean.MemberDTO" alias="memberDTO"/>
+		<typeAlias type="admin.bean.AdminDTO" alias="adminDTO"/>
 	</typeAliases>
 
 	<mappers>

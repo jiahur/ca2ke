@@ -8,9 +8,9 @@
     <!-- Uncomment and add your base-package here:
          <context:component-scan
             base-package="org.springframework.samples.service"/>  -->
-
-	<context:component-scan base-package="dao"/>
-	<context:component-scan base-package="controller"/>
+	
+	<context:component-scan base-package="member.*"/>
+	<context:component-scan base-package="admin.*"/>
 	<context:component-scan base-package="item.*"/>
 	<context:component-scan base-package="cart.*"/>
 	<context:component-scan base-package="order.*"/>
@@ -34,4 +34,21 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sessionFactory"/>
 	</bean>
+	
+		<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="leehh312@gmail.com" />
+		<property name="password" value="tkfkd0529" />
+
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
+	
 </beans>

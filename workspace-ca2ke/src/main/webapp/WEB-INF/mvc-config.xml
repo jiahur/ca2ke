@@ -10,11 +10,14 @@
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
 
-
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
     <mvc:annotation-driven />
-    <mvc:resources location="/image/" mapping="/image/**"/>
     <mvc:resources location="/img/" mapping="/img/**"/> <!-- 이미지 폴더 -->
-    <mvc:resources location="/js/" mapping="/js/**"/> <!-- jquery/ajax 폴더 -->
     <mvc:resources location="/assets/" mapping="/assets/**"/>
     <mvc:resources location="/storage/" mapping="/storage/**"/>
 
@@ -25,13 +28,16 @@
 	        <property name="suffix" value=".jsp"/>
 	</bean>
  -->
- 
- 	<context:component-scan base-package="controller"/>
+ 	<bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+    <property name="contentType" value="application/json;charset=UTF-8"> </property>
+	</bean>
+	
+
  	<context:component-scan base-package="item.controller"/>
  	<context:component-scan base-package="cart.controller"/>
  	<context:component-scan base-package="order.controller"/>
- 	<context:component-scan base-package="category.controller"/>
-
+	<context:component-scan base-package="member.controller"/>
+ 	<context:component-scan base-package="admin.controller"/>
  	
  	<!-- Multipart Resolver -->
  	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

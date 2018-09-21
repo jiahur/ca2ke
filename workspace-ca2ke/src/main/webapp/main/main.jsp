@@ -11,13 +11,13 @@
 <body>
    <div class="member">
 		<ul>
-			<li><a href=""><span>LOGIN</span></a></li>
+			<li><a href="loginForm"><span>LOGIN</span></a></li>
 			<li> | </li>
-			<li><a href=""><span>JOIN</span></a></li>
+			<li><a href="joinForm"><span>JOIN</span></a></li>
 			<li> | </li>
 			<li><a href=""><span>CART</span></a></li>
 			<li> | </li>
-			<li><a href=""><span>MyPage</span></a></li>
+			<li><a href="myPage"><span>MyPage</span></a></li>
 		</ul>
 	</div>
 

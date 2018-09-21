@@ -14,7 +14,7 @@
 		</div>
 		<div id="nav">
 			<ul>
-				<li><a href="">회원관리</a></li>
+				<li><a href="adminList?pg=1">회원관리</a></li>
 				<li><a href="">상품관리</a></li>
 				<li><a href="">주문관리</a></li>
 				<li><a href="">매출관리</a></li>
