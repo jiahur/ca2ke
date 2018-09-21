@@ -16,6 +16,7 @@
 	session.setAttribute("m_name", "홍길동");
 %>
 
+
 <!DOCTYPE html>
 <html>
 <head>
