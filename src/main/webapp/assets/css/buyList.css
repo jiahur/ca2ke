@@ -1,0 +1,67 @@
+@charset "utf-8";
+/*
+ * 파일명 : BuyList.css
+ * 기능설명: 컨텐츠 스타일
+ * 작성자 : 백경호
+ * 최종수정일 :	2018-09-13
+ */
+ .buyList{
+ 	padding-left:710px;
+ 	height:500px;
+    text-align:center;
+
+ }
+ 
+ .buyList li{
+ 	list-style: none;
+ }
+ 
+ .buyList #item_qty{
+ 	display:inline-block;
+ 	width:36%;
+ 	height:21px;	
+ }
+
+#addButton{
+	text-align:center;
+ 	border:1px solid #ffb497;
+ 	width: 140px;
+ 	margin: 2px;
+ 	padding: 0px;
+}
+ 
+ .buyButton{
+    text-align:center;
+ 	border:1px solid #ffb497;
+ 	width: 140px;
+ 	margin: 2px;
+ 	padding: 0px;
+ }
+ 
+
+ .buyList .item_name{
+ 	text-align:center;
+ 	border:1px solid #ffb497;
+ 	width: 110px;
+ 	height:21px;
+ 	margin: 2px;
+ 	padding: 0px;
+ }
+ 
+ .buyList  .item_qty{
+ 	text-align:center;
+ 	border:1px solid #ffb497;
+ 	width: 140px;
+ 	margin: 2px;
+ 	padding: 0px;
+ }
+ 
+ .buyList .item_price{
+ 	text-align:center;
+ 	border:1px solid #ffb497;
+ 	width: 110px;
+ 	height:21px;	
+ 	margin: 2px;
+ 	padding: 0px;
+ }
+ 

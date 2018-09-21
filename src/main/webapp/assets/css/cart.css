@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+.cart_table {
+	padding-top: 30px;
+	background-color: #fff;
+	width: 100%;
+	text-align: left;
+}
+
+th {
+	margin-top: 50px;
+	padding: 10px 20px;
+	background-color: #eee;
+}
+
+td {
+	background-color: #fff;
+	text-align: right;
+	vertical-align: top;
+	border-bottom: 2px dotted #eee;
+	padding: 10px 20px;
+}
+
+img {
+	width: 40%;
+	height: 50%;
+	display: inline-block;
+}
+
+.comment {
+	width: 40%;
+	height: 50%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+#buttonLine {
+	width: 500px;
+	height: 300px;
+	margin-left: auto;
+}
+
+.table1 {
+	width: 40%;
+}
+.table2 {
+	width: 10%;
+}
+.table3 {
+	width: 10%;
+}
+.table4 {
+	width: 20%;
+}
+.table5 {
+	width: 20%;
+}
+
+.sum_cart {
+	text-align: right;
+	margin-bottom: 50px;
+	padding: 10px 20px;
+	background-color: #eee;
+}
