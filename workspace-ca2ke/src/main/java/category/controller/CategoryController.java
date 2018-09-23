@@ -60,7 +60,8 @@ public class CategoryController {
 		String path = 
 				"C:\\Users\\user\\project\\ca2ke\\workspace-ca2ke\\src\\main\\webapp\\storage";
 		
-		if(img != null) {
+		if(!img.getOriginalFilename().equals("")) {
+			System.out.println("into FileProcess");
 			String fname = img.getOriginalFilename();
 			
 			File file = new File(path, fname);
@@ -73,7 +74,7 @@ public class CategoryController {
 			}
 			dto.setCategory_image(fname);
 		}
-		
+		dto.setCategory_image(dto.getCategory_image());
 		dao.update(dto);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("category_view");

@@ -12,6 +12,7 @@
 	<br /><hr /><br /><br />
 	<form action="updateCategory" method="post" enctype="multipart/form-data">
 		  <input type="hidden" value="${dto.i_category}" name="i_category"/>
+		  <input type="hidden" value="${dto.category_image}" name="category_image"/>
 		  <div class="form-group">
 		    <label for="category_name">카테고리명</label>
 		    <input type="text" class="form-control" name="category_name" 

@@ -6,7 +6,6 @@
 <meta charset="utf-8">
 <title></title>
 <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="assets/css/admin-common.css"/>
 </head>
 <body>
 	<div id="header" align="center">
@@ -31,7 +30,13 @@
 			<tr>
 				<td>${dto.i_category}</td>
 				<td>${dto.category_name}</td>
-				<td>${dto.category_image}</td>
+				<td>
+					<img 
+						src="storage/${dto.category_image}" 
+						alt="이미지"
+						style="width:80px;height:80px;"
+					/>
+				</td>
 				<td>${dto.category_ongoing}</td>
 				<td>
 					<form action="updateCategoryForm" method="post">
