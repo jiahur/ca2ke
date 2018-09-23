@@ -22,7 +22,12 @@ public class CategoryDAO {
 	}
 	
 	public List<CategoryDTO> getAllCategory() {
-		System.out.println("hello");
 		return session.selectList("mybatis.categoryMapper.getCategory");
+	}
+	
+	public CategoryDTO getCategoryArticle(int i_category) {
+		return session.selectOne(
+			"mybatis.categoryMapper.getCategoryArticle",
+			i_category);
 	}
 }

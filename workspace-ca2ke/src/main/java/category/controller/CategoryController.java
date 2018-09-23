@@ -27,7 +27,7 @@ public class CategoryController {
 				    method=RequestMethod.POST)
 	public ModelAndView addCategory(CategoryDTO dto, MultipartFile img) {
 		String path = 
-				"C:\\Users\\user\\git\\git_repo\\ca2ke\\src\\main\\webapp\\storage";
+				"C:\\Users\\user\\project\\ca2ke\\workspace-ca2ke\\src\\main\\webapp\\storage";
 		String fname = img.getOriginalFilename();
 		
 		File file = new File(path, fname);
@@ -44,9 +44,36 @@ public class CategoryController {
 		modelAndView.setViewName("category_view");
 		return modelAndView;
 	}
+		
+	@RequestMapping(value="/updateCategoryForm")
+	public ModelAndView updateCategoryForm(int req) {
+		CategoryDTO dto = dao.getCategoryArticle(req);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("dto", dto);
+		modelAndView.setViewName("category/updateCategory.jsp");
+		return modelAndView;
+	}
 	
-	@RequestMapping(value="/updateCategory")
-	public ModelAndView updateCategory(CategoryDTO dto) {
+	@RequestMapping(value="/updateCategory",
+					method=RequestMethod.POST)
+	public ModelAndView updateCategory(CategoryDTO dto, MultipartFile img) {
+		String path = 
+				"C:\\Users\\user\\project\\ca2ke\\workspace-ca2ke\\src\\main\\webapp\\storage";
+		
+		if(img != null) {
+			String fname = img.getOriginalFilename();
+			
+			File file = new File(path, fname);
+			try {
+				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+			} catch(FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			dto.setCategory_image(fname);
+		}
+		
 		dao.update(dto);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("category_view");

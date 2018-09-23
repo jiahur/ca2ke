@@ -13,6 +13,10 @@
 		SELECT * FROM category
 	</select>
 	
+	<select id="getCategoryArticle" parameterType="int" resultType="category">
+		SELECT * FROM category WHERE i_category=#{i_category}
+	</select>
+	
 	<update id="update" parameterType="category">
 		UPDATE category 
 		SET category_name=#{category_name}, category_image=#{category_image},
