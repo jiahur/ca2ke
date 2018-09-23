@@ -1,6 +1,7 @@
 category\controller\CategoryController.class
 order\controller\OrderlistServiceImpl.class
 category\dao\CategoryDAO.class
+category\controller\IndexController.class
 item\controller\ItemServiceImpl.class
 item\dao\ItemDAO.class
 order\bean\OrderlistInDTO.class
