@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
 </head>
 <body>
 	<div id="header" align="center">

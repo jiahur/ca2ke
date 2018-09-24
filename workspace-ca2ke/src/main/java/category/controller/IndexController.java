@@ -17,12 +17,21 @@ public class IndexController {
 	private CategoryDAO dao;
 	
 	
-	@RequestMapping(value="/index")
+	@RequestMapping(value="/main/index")
 	public ModelAndView indexing() {
 		List<CategoryDTO> list = dao.getAllCategory();
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("categorylist", list);
+		modelAndView.setViewName("../main/index.jsp");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/main")
+	public ModelAndView maining() {
+		List<CategoryDTO> list = dao.getAllCategory();
+		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("list", list);
-		modelAndView.setViewName("main/index.jsp");
+		modelAndView.setViewName("main/main.jsp");
 		return modelAndView;
 	}
 }
