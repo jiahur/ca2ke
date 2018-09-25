@@ -11,10 +11,7 @@
 	<div id="header" align="center">
 		<h1>카테고리 관리</h1>
 	</div>
-
-	<button class="btn btn-info" onclick="location.href='category/addCategory.jsp'">
-		+ 새로운 카테고리 추가
-	</button>
+	<br/>
 	<br/>
 	<table class="table">
 		<thead>
