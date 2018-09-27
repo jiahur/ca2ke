@@ -28,30 +28,12 @@
 	    <div id="nav">
 	    	<div class="jcarousel">
 				<ul  class="nav_ul">
-				    <li><a href="itemList?category=1"><span>
-				    	<img src="../img/cake.png" alt="cake" style="width: 60px; height: 90px;"/>
-				    	<br/>CAKE
-				    </span></a></li>
-				    <li><a href="itemList?category=2"><span>
-				    	<img src="../img/macaron.png" alt="macaron" style="width: 60px; height: 90px;"/>
-				    	<br/>MACARON
-				    </span></a></li>
-				    <li><a href="itemList?category=3"><span>
-				    	<img src="../img/coffee.png" alt="coffee" style="width: 60px; height: 90px;"/>
-				    	<br />COFFEE
-				    </span></a></li>
-				    <li><a href="itemList?category=1"><span>
-				    	<img src="../img/cake.png" alt="cake" style="width: 60px; height: 90px;"/>
-				    	<br/>CAKE
-				    </span></a></li>
-				    <li><a href="itemList?category=2"><span>
-				    	<img src="../img/macaron.png" alt="macaron" style="width: 60px; height: 90px;"/>
-				    	<br/>MACARON
-				    </span></a></li>
-				    <li><a href="itemList?category=3"><span>
-				    	<img src="../img/coffee.png" alt="coffee" style="width: 60px; height: 90px;"/>
-				    	<br />COFFEE
-				    </span></a></li>
+					<c:forEach var="categorydto" items="${categorylist}">
+						<li><a href="/ca2ke/item/itemList?category=${categorydto.i_category}"><span>
+							<img src="/ca2ke/storage/${categorydto.category_image}" alt="cake" style="width: 60px; height: 90px;"/>
+							<br/>${categorydto.category_name}
+						</span></a></li>
+					</c:forEach>
 				</ul>				
 	            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 	            <a href="#" class="jcarousel-control-next">&rsaquo;</a>

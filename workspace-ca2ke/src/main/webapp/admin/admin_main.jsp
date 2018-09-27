@@ -51,7 +51,18 @@
 		<div class="tab-content">
 		  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
 			
+			<div class="card" style="width: 20rem;">
+			  <div class="card-body">
+				<h4 class="card-title">회원 목록</h4>
+				<p class="card-text">이미 등록된 상품 카테고리 <br/>이미지마크, 활성화상태, 세부사항
+				  <br/>변경하기!</p>
+				<a href="adminList?pg=1" class="btn btn-info">바로가기</a>
+			  </div>
+			</div>
 
+		  </div>
+		  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+		  
 			<div class="card" style="width: 20rem;">
 			  <div class="card-body">
 				<h4 class="card-title">카테고리 추가</h4>
@@ -66,20 +77,27 @@
 				<h4 class="card-title">카테고리 수정</h4>
 				<p class="card-text">이미 등록된 상품 카테고리 <br/>이미지마크, 활성화상태, 세부사항
 				  <br/>변경하기!</p>
-				<a href="../category_view" class="btn btn-info">바로가기</a>
+				<a href="../category/category_view" class="btn btn-info">바로가기</a>
 			  </div>
 			</div>
 			
 		  </div>
-		  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-		  <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-		  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+		  
+		  <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+		  
+		  </div>
+		  
+		  
+		  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+		  
+		  </div>
 		</div>
 	</div>
 	
 <script type="text/javascript" src="../assets/js/jquery.js"></script>
 <script type="text/javascript" src="../assets/js/popper.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+<!-- 
 <script type="text/javascript">
 	$(function() {
 		$("a.btn").click(function() {
@@ -97,5 +115,6 @@
 		});
 	});
 </script>
+ -->
 </body>
 </html>

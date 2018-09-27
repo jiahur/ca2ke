@@ -26,12 +26,12 @@ public class IndexController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/main")
+	@RequestMapping(value="/main/main")
 	public ModelAndView maining() {
 		List<CategoryDTO> list = dao.getAllCategory();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("list", list);
-		modelAndView.setViewName("main/main.jsp");
+		modelAndView.addObject("categorylist", list);
+		modelAndView.setViewName("../main/main.jsp");
 		return modelAndView;
 	}
 }

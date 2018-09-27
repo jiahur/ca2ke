@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../assets/css/index.css"/>
-<link rel="stylesheet" href="../assets/css/carousel.css"/>
+<link rel="stylesheet" href="/ca2ke/assets/css/index.css"/>
+<link rel="stylesheet" href="/ca2ke/assets/css/carousel.css"/>
 <title></title>
 </head>
 <body>
@@ -29,7 +29,7 @@
 				</c:if>
 			</ul>
 		</div>
-		<img src="../img/main_title.png" alt="로고이미지" style="width:300px; height: 200px; margin-top: 100px;">
+		<img src="/ca2ke/img/main_title.png" alt="로고이미지" style="width:300px; height: 200px; margin-top: 100px;">
 		<ul>
 		    <li><a href="#about"><span>ABOUT</span></a></li>
 		    <li><a href="#nav"><span>CAKE &amp;</span></a></li>
@@ -50,8 +50,8 @@
   		<div class="jcarousel">
 			<ul  class="nav_ul">
 				<c:forEach var="categorydto" items="${categorylist}">
-					<li><a href="../item/itemList?category=${categorydto.i_category}"><span>
-						<img src="../storage/${categorydto.category_image}" alt="cake" style="width: 60px; height: 90px;"/>
+					<li><a href="/ca2ke/item/itemList?category=${categorydto.i_category}"><span>
+						<img src="/ca2ke/storage/${categorydto.category_image}" alt="cake" style="width: 60px; height: 90px;"/>
 						<br/>${categorydto.category_name}
 					</span></a></li>
 				</c:forEach>
@@ -74,9 +74,9 @@
     	<c:if test="${display == null }">
 	    	<div id="about">
 	    		<div class="about_title">
-	    			<img src="../img/contents_logo1.png" alt="logo1"/><br /><br />
+	    			<img src="/ca2ke/img/contents_logo1.png" alt="logo1"/><br /><br />
 	    			<span class="about_logo2">
-	    				<img src="../img/contents_logo2.png" alt="logo2" style="width: 300px; height: 60px;"/>
+	    				<img src="/ca2ke/img/contents_logo2.png" alt="logo2" style="width: 300px; height: 60px;"/>
 	    			</span>
 	    		</div>
 	    		<div class="about_content">
@@ -108,7 +108,7 @@
 			<div class="store_title">
 				<ul class="menu">
 					<li>
-						<img src="../img/img_map.png" alt="maptitle" style="width: 300px; height: 70px;"/>
+						<img src="/ca2ke/img/img_map.png" alt="maptitle" style="width: 300px; height: 70px;"/>
 						<ul class="sub">
 							<li>종로점</li>
 							<li>강남점</li>
@@ -169,10 +169,10 @@
     
     
     
-<script type="text/javascript" src="../assets/js/jquery.js"></script>
-<script type="text/javascript" src="../assets/js/jcarousel/jquery.jcarousel.min.js"></script>
-<script type="text/javascript" src="../assets/js/jcarousel/jcarousel.responsive.js"></script>
-<script type="text/javascript" src="../assets/js/index.js"></script>
+<script type="text/javascript" src="/ca2ke/assets/js/jquery.js"></script>
+<script type="text/javascript" src="/ca2ke/assets/js/jcarousel/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/ca2ke/assets/js/jcarousel/jcarousel.responsive.js"></script>
+<script type="text/javascript" src="/ca2ke/assets/js/index.js"></script>
 <script type="text/javascript" 
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=117d1f1a8f683da7edfa43ace732ffd0"></script>
 <script type="text/javascript" 

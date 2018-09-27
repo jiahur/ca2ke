@@ -27,7 +27,7 @@ public class CategoryController {
 				    method=RequestMethod.POST)
 	public ModelAndView addCategory(CategoryDTO dto, MultipartFile img) {
 		String path = 
-				"C:\\Users\\user\\project\\ca2ke\\workspace-ca2ke\\src\\main\\webapp\\storage\\category";
+				"E:\\workspace\\ca2ke_1st\\src\\main\\webapp\\storage";
 		String fname = img.getOriginalFilename();
 		
 		File file = new File(path, fname);
@@ -58,7 +58,7 @@ public class CategoryController {
 					method=RequestMethod.POST)
 	public ModelAndView updateCategory(CategoryDTO dto, MultipartFile img) {
 		String path = 
-				"C:\\Users\\user\\project\\ca2ke\\workspace-ca2ke\\src\\main\\webapp\\storage\\category";
+				"E:\\workspace\\ca2ke_1st\\src\\main\\webapp\\storage";
 		
 		if(!img.getOriginalFilename().equals("")) {
 			System.out.println("into FileProcess");

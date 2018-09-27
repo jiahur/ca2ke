@@ -36,7 +36,7 @@
 				</td>
 				<td>${dto.category_ongoing}</td>
 				<td>
-					<form action="updateCategoryForm" method="post">
+					<form action="../category/updateCategoryForm" method="post">
 						<input type="hidden" name="req" value="${dto.i_category}"/>
 						<input type="submit" class="btn btn-default" value="수정"/>
 					</form>
