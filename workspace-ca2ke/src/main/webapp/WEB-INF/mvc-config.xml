@@ -31,6 +31,8 @@
  	<context:component-scan base-package="cart.controller"/>
  	<context:component-scan base-package="order.controller"/>
  	<context:component-scan base-package="category.controller"/>
+ 	<context:component-scan base-package="admin.controller"/>
+ 	<context:component-scan base-package="manager.controller"/>
 
  	
  	<!-- Multipart Resolver -->

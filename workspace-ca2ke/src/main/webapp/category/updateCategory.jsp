@@ -10,7 +10,7 @@
 <body>
 	<h3>카테고리 수정</h3>
 	<br /><hr /><br /><br />
-	<form action="../updateCategory" method="post" enctype="multipart/form-data">
+	<form action="updateCategory" method="post" enctype="multipart/form-data">
 		  <input type="hidden" value="${dto.i_category}" name="i_category"/>
 		  <input type="hidden" value="${dto.category_image}" name="category_image"/>
 		  <div class="form-group">

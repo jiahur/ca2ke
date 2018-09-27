@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
 </head>
 <body>
-	<div id="header" align="center">
-		<h1>카테고리 관리</h1>
+	<div id="header" align="left" style="padding: 50px;">
+		<h3>카테고리 관리</h3>
 	</div>
 	<br/>
 	<br/>
@@ -36,9 +36,9 @@
 				</td>
 				<td>${dto.category_ongoing}</td>
 				<td>
-					<form action="updateCategoryForm" method="post">
-						<input type="hidden" name="req" value="${dto.i_category}"/>
-						<input type="submit" class="btn btn-default" value="수정"/>
+					<form action="updateCategoryForm">
+						<input type="hidden" value="${dto.i_category}" name="req"/>
+						<input type="submit" value='수정' class="btn btn-default">
 					</form>
 				</td>
 			</tr>

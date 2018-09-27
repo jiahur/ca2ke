@@ -8,9 +8,8 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css"/>
 </head>
 <body>
-	<h3>카테고리 추가</h3>
-	<br /><hr /><br /><br />
-	<form action="../addCategory" method="post" enctype="multipart/form-data">
+	<div style="padding: 50px;"><h3>카테고리 추가</h3></div>
+	<form action="addCategory" method="post" enctype="multipart/form-data" id="categoryForm">
 		  <div class="form-group">
 		    <label for="category_name">카테고리명</label>
 		    <input type="text" class="form-control" name="category_name" required="required">

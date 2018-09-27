@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,10 +21,19 @@ public class CategoryController {
 	@Autowired
 	private CategoryDAO dao;
 	
+	@RequestMapping(value="/addCategoryForm")
+	public ModelAndView addCategoryForm() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("tab", "admin_item.jsp");
+		modelAndView.addObject("display", "../category/addCategory.jsp");
+		modelAndView.setViewName("admin/admin_main.jsp");
+		return modelAndView;
+	}
 	
-	@RequestMapping(value="/addCategory",
-				    method=RequestMethod.POST)
+	@RequestMapping(value="/addCategory")
 	public ModelAndView addCategory(CategoryDTO dto, MultipartFile img) {
+		System.out.println(dto);
+		System.out.println(img);
 		String path = 
 				"E:\\workspace\\ca2ke_1st\\src\\main\\webapp\\storage";
 		String fname = img.getOriginalFilename();
@@ -39,9 +47,10 @@ public class CategoryController {
 			e.printStackTrace();
 		}
 		dto.setCategory_image(fname);
-		dao.insert(dto);
+		int result = dao.insert(dto);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("category_view");
+		modelAndView.addObject("result", result);
+		modelAndView.setViewName("category/category_result.jsp");
 		return modelAndView;
 	}
 		
@@ -50,12 +59,14 @@ public class CategoryController {
 		CategoryDTO dto = dao.getCategoryArticle(req);
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("dto", dto);
-		modelAndView.setViewName("category/updateCategory.jsp");
+
+		modelAndView.addObject("tab", "admin_item.jsp");
+		modelAndView.addObject("display", "../category/updateCategory.jsp");
+		modelAndView.setViewName("admin/admin_main.jsp");
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/updateCategory",
-					method=RequestMethod.POST)
+	@RequestMapping(value="/updateCategory")
 	public ModelAndView updateCategory(CategoryDTO dto, MultipartFile img) {
 		String path = 
 				"E:\\workspace\\ca2ke_1st\\src\\main\\webapp\\storage";
@@ -75,9 +86,10 @@ public class CategoryController {
 			dto.setCategory_image(fname);
 		}
 		dto.setCategory_image(dto.getCategory_image());
-		dao.update(dto);
+		int result = dao.update(dto);
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("category_view");
+		modelAndView.addObject("result", result);
+		modelAndView.setViewName("category/category_result.jsp");
 		return modelAndView;
 	}
 	
@@ -85,8 +97,10 @@ public class CategoryController {
 	public ModelAndView category_view() {
 		List<CategoryDTO> list = dao.getAllCategory();
 		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("tab", "admin_item.jsp");
+		modelAndView.addObject("display", "../category/category_view.jsp");
 		modelAndView.addObject("list", list);
-		modelAndView.setViewName("category/category_view.jsp");
+		modelAndView.setViewName("admin/admin_main.jsp");
 		return modelAndView;
 	}
 }
